@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi\\ManangerBarberApi.csproj": {}
+    "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi\\ManangerBarberApi.csproj": {
+    "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi\\ManangerBarberApi.csproj",
+        "projectUniqueName": "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi.csproj",
         "projectName": "ManangerBarberApi",
-        "projectPath": "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi\\ManangerBarberApi.csproj",
+        "projectPath": "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi.csproj",
         "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\ManangerBarberApi\\obj\\",
+        "outputPath": "C:\\Users\\guilh\\AndroidStudioProjects\\Diario\\ManagerBarber-Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
