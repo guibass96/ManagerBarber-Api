@@ -11,7 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-
+using Microsoft.EntityFrameworkCore;
+using ManagerBarber_Api.Models;
+using ManagerBarber_Api.Data;
 namespace ManangerBarberApi
 {
     public class Startup
@@ -26,7 +28,9 @@ namespace ManangerBarberApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+             services.AddDbContext<DataContext>(opt =>opt.UseSqlServer(connectionString));
+              services.AddScoped<DataContext,DataContext>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
