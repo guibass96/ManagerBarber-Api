@@ -6,8 +6,9 @@ using ManagerBarber_Api.Domain.Models;
 
 namespace ManagerBarber_Api.Domain.Repositories
 {
-    public interface IClientesRepository
+    public interface IClientesRepository<T>
     {
           Task<IEnumerable<Cliente>> ListAsync();
+           Task<T> Create(T _object);
     }
 }

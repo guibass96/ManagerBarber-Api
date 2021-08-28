@@ -5,10 +5,10 @@ using ManagerBarber_Api.Domain.Repositories;
 using ManagerBarber_Api.Domain.Models;
 namespace ManagerBarber_Api.Services
 {
-    public class ClienteService: IClienteService
+    public class ClienteService: IClienteService<Cliente>
     {
-      private readonly IClientesRepository _clienteRepository;
-        public ClienteService(IClientesRepository clienteRepository)
+      private readonly IClientesRepository<Cliente> _clienteRepository;
+        public ClienteService(IClientesRepository<Cliente> clienteRepository)
         {
             _clienteRepository = clienteRepository;
         }
@@ -18,5 +18,10 @@ namespace ManagerBarber_Api.Services
             return await _clienteRepository.ListAsync();
         }
        
+          public async Task<Cliente> Create(Cliente cliente)
+        {
+           return await _clienteRepository.Create(cliente);
+ 
+        }
     }
 }

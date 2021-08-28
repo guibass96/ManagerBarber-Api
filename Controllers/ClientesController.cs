@@ -17,8 +17,8 @@ namespace ManangerBarberApi.Controllers
         /*private readonly DataContext _context;
         public ClientesController(DataContext context) => _context = context;
 */
-        private readonly IClienteService _clienteService;
-        public ClientesController(IClienteService clienteService){
+        private readonly IClienteService<Cliente> _clienteService;
+        public ClientesController(IClienteService<Cliente> clienteService){
             _clienteService = clienteService;
         }
 
@@ -26,7 +26,20 @@ namespace ManangerBarberApi.Controllers
         public  async Task<IEnumerable<Cliente>> GetAllAsync()
         {
           var clientes = await _clienteService.ListAsync();
+     
           return clientes;
+        }
+
+        [HttpPost("/api/AddPerson")]
+        public async Task<Object> AddPerson([FromBody] Cliente cliente){
+           try{
+                 await _clienteService.Create(cliente);
+                 Console.Write("entrei");
+                 return true;
+            }catch(Exception){
+                return false;
+            }
+         
         }
     }
 }

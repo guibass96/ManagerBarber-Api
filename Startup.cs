@@ -35,8 +35,8 @@ namespace ManangerBarberApi
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
              services.AddDbContext<DataContext>(opt =>opt.UseSqlServer(connectionString));
              services.AddScoped<DataContext,DataContext>();
-             services.AddScoped<IClientesRepository,ClienteRepository>();
-             services.AddScoped<IClienteService,ClienteService>();
+             services.AddScoped<IClientesRepository<Cliente>,ClienteRepository>();
+             services.AddScoped<IClienteService<Cliente>,ClienteService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
