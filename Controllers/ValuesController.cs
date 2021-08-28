@@ -4,13 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
+
 using Microsoft.EntityFrameworkCore;
-using ManagerBarber_Api.Data;
 using ManagerBarber_Api.Models;
+using ManagerBarber_Api.Data;
 namespace ManangerBarberApi.Controllers
 {
     
-    [Route("/api/[controller]")]
+    [Route("api/[controller]")]
     public class ValuesController : Controller
     {
         private readonly DataContext _context;
@@ -21,7 +23,7 @@ namespace ManangerBarberApi.Controllers
           var a = await _context.Cliente.ToListAsync();
            //  var categoria = await _categoriaService.ListAsync();
             // return categoria;
-          return a;
+            return a;
         }
     }
 }
