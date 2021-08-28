@@ -12,7 +12,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using ManagerBarber_Api.Models;
+using ManagerBarber_Api.Domain.Models;
+using ManagerBarber_Api.Domain.Services;
+using ManagerBarber_Api.Domain.Repositories;
+using ManagerBarber_Api.Services;
+using ManagerBarber_Api.Repositories;
 using ManagerBarber_Api.Data;
 namespace ManangerBarberApi
 {
@@ -30,7 +34,9 @@ namespace ManangerBarberApi
         {
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
              services.AddDbContext<DataContext>(opt =>opt.UseSqlServer(connectionString));
-              services.AddScoped<DataContext,DataContext>();
+             services.AddScoped<DataContext,DataContext>();
+             services.AddScoped<IClientesRepository,ClienteRepository>();
+             services.AddScoped<IClienteService,ClienteService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

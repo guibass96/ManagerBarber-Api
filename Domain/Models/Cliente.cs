@@ -1,4 +1,4 @@
-namespace ManagerBarber_Api.Models
+namespace ManagerBarber_Api.Domain.Models
 {
     public class Cliente
     {
