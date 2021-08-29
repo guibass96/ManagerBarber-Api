@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using ManagerBarber_Api.Domain.Models;
-using ManagerBarber_Api.Domain.Services;
+using ManagerBarber_Api.Services;
 using ManagerBarber_Api.Data;
 namespace ManangerBarberApi.Controllers
 {
@@ -17,8 +17,8 @@ namespace ManangerBarberApi.Controllers
         /*private readonly DataContext _context;
         public ClientesController(DataContext context) => _context = context;
 */
-        private readonly IClienteService<Cliente> _clienteService;
-        public ClientesController(IClienteService<Cliente> clienteService){
+        private readonly ClienteService _clienteService;
+        public ClientesController(ClienteService clienteService){
             _clienteService = clienteService;
         }
 
@@ -33,8 +33,7 @@ namespace ManangerBarberApi.Controllers
         [HttpPost("/api/AddPerson")]
         public async Task<Object> AddPerson([FromBody] Cliente cliente){
            try{
-                 await _clienteService.Create(cliente);
-                 Console.Write("entrei");
+                 await _clienteService.AddPerson(cliente);
                  return true;
             }catch(Exception){
                 return false;

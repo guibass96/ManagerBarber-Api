@@ -10,5 +10,6 @@ namespace ManagerBarber_Api.Domain.Repositories
     {
           Task<IEnumerable<Cliente>> ListAsync();
            Task<T> Create(T _object);
+           // public void Delete(T _object);
     }
 }

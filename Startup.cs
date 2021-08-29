@@ -13,7 +13,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using ManagerBarber_Api.Domain.Models;
-using ManagerBarber_Api.Domain.Services;
 using ManagerBarber_Api.Domain.Repositories;
 using ManagerBarber_Api.Services;
 using ManagerBarber_Api.Repositories;
@@ -36,7 +35,7 @@ namespace ManangerBarberApi
              services.AddDbContext<DataContext>(opt =>opt.UseSqlServer(connectionString));
              services.AddScoped<DataContext,DataContext>();
              services.AddScoped<IClientesRepository<Cliente>,ClienteRepository>();
-             services.AddScoped<IClienteService<Cliente>,ClienteService>();
+             services.AddScoped<ClienteService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

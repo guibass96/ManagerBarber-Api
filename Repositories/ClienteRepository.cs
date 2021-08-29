@@ -16,7 +16,7 @@ namespace ManagerBarber_Api.Repositories
         {
             return await _context.Cliente.ToListAsync();
         }
-               public async Task<Cliente> Create(Cliente _object)
+        public async Task<Cliente> Create(Cliente _object)
         {
             var obj =  await _context.Cliente.AddAsync(_object);
             _context.SaveChanges();
