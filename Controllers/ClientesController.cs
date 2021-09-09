@@ -40,5 +40,34 @@ namespace ManangerBarberApi.Controllers
             }
          
         }
+
+                [HttpPut("/api/UpdatePerson")]
+        public bool UpdatePerson([FromBody] Cliente Object)
+        {
+            try
+            {
+                _clienteService.UpdatePerson(Object);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        [HttpDelete("/api/DeletePerson")]
+        public bool DeletePerson(int id)
+        {
+            try
+            {
+                _clienteService.DeletePerson(id);
+                System.Console.WriteLine(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
